@@ -1,0 +1,44 @@
+            String num;
+            String question;
+            String answer;
+            try
+            {
+                if (!NumComboBox.Text.Equals(""))
+                {
+                     num = NumComboBox.Text;
+                     Number.Add(num);
+                   // MessageBox.Show(num);
+                }
+                else
+                {
+                    throw new Exception("You must enter the question number.");
+                }
+
+                if (!QuestionRTextBox.Text.Equals(""))
+                {
+                     question = QuestionRTextBox.Text;
+                     Questions.Add(question);
+                   // MessageBox.Show(question);
+                }
+                else
+                {
+                    throw new Exception("You must enter the question.");
+                }
+
+                if (FindAnswer() == "no answer provided")
+                {
+                    throw new Exception(" You must provide the answer.");
+
+                }
+                else
+                {
+                    answer = FindAnswer();
+                    Answers.Add(answer);
+                    MessageBox.Show(num + question + "\n" + answer);
+                   // MessageBox.Show(answer);
+                }
+            }
+            catch(Exception z)
+            {
+                MessageBox.Show(z.Message);
+            }
